@@ -1,4 +1,6 @@
 import requests
+
+#Used to store pateint basics 
 class Case():
     def __init__(self, age: int, sex: int) -> None:
         self.age=age
@@ -6,10 +8,11 @@ class Case():
         self.drugs=[]
         self.reactions=[] 
 
-
+#Takes input for search
 def mainsearch():
     drugname = str(input())
     apicall(drugname)
+#API call to retrieve adverse effect reports on given search
 def apicall(drug: str):
     cases=[]
     api_url= f'https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:"{drug}"&limit=10'
@@ -25,13 +28,15 @@ def apicall(drug: str):
             except:
                 print("Error")
             
+    """
     for c in cases:
         print(c.age)
         print(c.sex)
         print(c.drugs)
         print(c.reactions)
         print('\n')
-
+    """
+    return cases 
 def demo():
     mainsearch()
 demo()

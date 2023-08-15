@@ -97,8 +97,13 @@ class mainapp():
         for w in frames.winfo_children():
             w.destroy()
 
+    def quit(self):
+        self.window.destroy()
+        quit()
+
 def appy():
     root= tk.Tk()
     app= mainapp(root)
+    root.protocol("WM_DELETE_WINDOW", app.quit)
     root.mainloop()
 appy()

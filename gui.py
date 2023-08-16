@@ -1,6 +1,7 @@
 import tkinter as tk
 import time 
 import home
+from PIL import ImageTk, Image
 from collections import defaultdict
 class mainapp():
     def __init__(self, master):
@@ -14,9 +15,11 @@ class mainapp():
         self.frm0.pack()
         self.frm1.pack()
         self.pns=None
+        self.icon=None
         self.searcher()
     def searcher(self):
-        searchmessage=tk.Label(self.frm0, text="Enter Medicine", font=('Helvetica', 20, 'bold'))
+        self.icon=ImageTk.PhotoImage(Image.open("./img/logo.PNG"))
+        searchmessage=tk.Label(self.frm0, image=self.icon, height=150)
         searchbox=tk.Text(self.frm0,height="1", font=("Helvetica", 20))
         searchbox.tag_configure("center", justify='center')
         searchbutt=tk.Button(self.frm0,text="Search", width=20, height=3,justify="center", command=lambda: self.drawdata(self.frm1))
@@ -27,8 +30,8 @@ class mainapp():
         pagesearch.bind("<FocusIn>", self.temp_text)
         pagesearch.bind("<FocusOut>", self.temp_text2)
         pagesearch.bind("<Return>", self.pagesearcher)
-        searchmessage.pack_propagate(True)
-        searchmessage.pack()
+        #searchmessage.pack_propagate(True)
+        searchmessage.pack(fill="both", expand="True")
         searchbox.pack(fill="x")
         searchbutt.pack(side="left", pady="20", padx=(0, 100))
         nextbutt.pack(side="left", pady="20")

@@ -16,6 +16,17 @@ class mainapp():
         self.frm1.pack()
         self.pns=None
         self.icon=None
+        self.creator = tk.Toplevel(self.window)
+        self.creator.protocol("WM_DELETE_WINDOW", lambda: None)
+        self.creator.grab_set()
+        self.creator.wm_attributes("-topmost", True)
+        self.creator.geometry("400x400")
+        agree=tk.Button(self.creator,text="Agree", width=20, height=3,justify="center", command=self.agreed,bg="lightgrey")
+        disagree=tk.Button(self.creator,text="Disagree", width=20, height=3,justify="center", command=self.disagreed,bg="lightgrey")
+        disclaimer=tk.Label(self.creator, text="Medisee is provided for educational and informational purposes only and does not constitute providing medical advice or professional services. The information provided should not be used for diagnosing or treating a health problem or disease, and those seeking personal medical advice should consult with a licensed physician", height=10, wraplength=400, font=('Helvetica', 10, 'bold'))
+        disclaimer.pack()
+        agree.pack()
+        disagree.pack()
         self.searcher()
     def searcher(self):
         self.icon=ImageTk.PhotoImage(Image.open("./img/logo.PNG"))
@@ -99,7 +110,12 @@ class mainapp():
     def delete(self, frames):
         for w in frames.winfo_children():
             w.destroy()
-
+    def agreed(self):
+        self.creator.destroy()
+    def disagreed(self):
+        self.creator.destroy()
+        self.window.destroy()
+        quit()
     def quit(self):
         self.window.destroy()
         quit()

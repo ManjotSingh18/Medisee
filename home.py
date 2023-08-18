@@ -13,9 +13,9 @@ def mainsearch():
     drugname = str(input())
     apicall(drugname)
 #API call to retrieve adverse effect reports on given search
-def apicall(drug: str):
+def apicall(drug: str, limiter: int):
     cases=[]
-    api_url= f'https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:"{drug}"&limit=100'
+    api_url= f'https://api.fda.gov/drug/event.json?search=patient.drug.openfda.brand_name:"{drug}"&limit={limiter}'
     response = requests.get(api_url)
     try:
         for patients in response.json()['results']:

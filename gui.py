@@ -46,6 +46,8 @@ class mainapp():
         pagesearch.bind("<FocusIn>", self.temp_text)
         pagesearch.bind("<FocusOut>", self.temp_text2)
         pagesearch.bind("<Return>", self.pagesearcher)
+        searchbox.bind("<Return>", lambda event: self.drawdata(self.frm1) )
+
         #searchmessage.pack_propagate(True)
         searchmessage.pack(fill="both", expand="True")
         searchbox.pack(fill="x")
@@ -107,7 +109,8 @@ class mainapp():
 
     def drawdata(self, frames):
         self.offset=0
-        self.data= home.apicall(self.frm0.winfo_children()[1].get("1.0","end-1c"), self.limits)
+        print(self.frm0.winfo_children()[1].get("1.0","end-1c"))
+        self.data= home.apicall(self.frm0.winfo_children()[1].get("1.0","end-1c").split("\n")[-1], self.limits)
         self.move.clear()
         counter=0
         for i in range(0, len(self.data)):
@@ -201,4 +204,6 @@ def appy():
     app= mainapp(root)
     root.protocol("WM_DELETE_WINDOW", app.quit)
     root.mainloop()
-appy()
+
+if __name__=='__main__':
+    appy()

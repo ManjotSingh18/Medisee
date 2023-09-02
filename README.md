@@ -1,6 +1,7 @@
 <p align="center">
   <img src="img/logo.png" width="55%" height="150" margin-left="auto" margin-right="auto">
 </p>
+
 # About
 Medisee is a program intended to improve transparency and accessibility of medicine and its adverse effects via the visualization of anonymous cases that may be difficult to obtain by users as they are stored in the Federal Drug Administration API.
 

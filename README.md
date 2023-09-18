@@ -3,13 +3,13 @@
 </p>
 
 # About
-Medisee is a program intended to improve transparency and accessibility of medicine and its adverse effects via the visualization of anonymous cases that may be difficult to obtain by users as they are stored in the Federal Drug Administration API.
+Medisee is a program with the primary goal of enhancing transparency and accessibility within the field of medicine. It achieves this by visualizing anonymized case data related to adverse effects, which can be difficult for users to obtain due to their storage within the Federal Drug Administration (FDA) API. The mission at Medisee is to provide users with visualizations that help them have a better understanding of medicine-related adverse events. 
 
 # Features 
-* Visualizes FDA API into a readable format
-* Up to 1000 Drug/Reaction cases available per query
-* Filter available to narrow cases down
-* Simplistic GUI for seamless analysis of data 
+* Transforms FDA API data into visual representations
+* 1000 drug/reaction cases per query
+* Filters to narrow down cases and focus on user criteria
+* user-friendly GUI
 
 # Requirements
 * Python (See Requirements.txt)
@@ -18,16 +18,17 @@ Medisee is a program intended to improve transparency and accessibility of medic
 * Command Prompt
 
 # Installation and Usage
-1. Download the repository and extract it to the desired location
-2. Launch a command prompt and navigate to the repository by entering "cd Path/to/folder"
-3. To execute the program enter "python gui.py"
-4. The user will be prompted by a medical disclaimer where they can agree and continue or disagree and terminate the program
+1. Begin by downloading the repository and extracting it to your preferred location.
+2. Open a terminal and navigate to the repository directory using the "cd Path/to/folder/Medisee" command.
+3. Run the command pip install -r requirements.txt command.
+4. To execute the program, enter the following command: python gui.py.
+5. Users will encounter a medical disclaimer. They can choose to agree and continue or disagree to terminate the program.
 <p align="center">
   <img src="img/disc.png" width="75%" height="50%" margin-left="auto" margin-right="auto">
 </p>
 
-5. Enter a medicinal query and utilize the filter button if required, once ready click the search button
-6. Within a few seconds hundreds of cases will be available below, to navigate use the next and previous buttons, to search specific pages use the page finder entry
+6. Input your medicinal query and, if needed, apply filters. When you're ready, click the "Search" button.
+7. Use the "Next" and "Previous" buttons to navigate through the results. To find specific pages, use the "Page Finder" entry.
 
 <p align="center">
   <img src="img/search.png" width="75%" height="500" margin-left="auto" margin-right="auto">
@@ -37,10 +38,10 @@ Medisee is a program intended to improve transparency and accessibility of medic
 
 # Technology
 ## Python (Tkinter)
-* Used to capture the data from FDA API and visualized using Tkinter GUI
+* Requests library for fetching data from the FDA API, and Tkinter for creating an intuitive graphical user interface (GUI) to present the information.
 
 # Contributions
-Medisee is open source and welcomes contributions and features from developers to further dismantle the blocks between patients and medicinal data.
+Medisee is an open-source project and welcomes contributions from developers. Together, we can continue breaking down barriers between patients and essential medicinal data by adding new features and improving existing ones.
 
 # Future
-A feature in development is the ability to scan medicine and query by NDC code. A secondary feature being discussed is a text enlarger for prescription medicine as elderly people may have a difficult time reading small text on medicinal products. 
+A feature reserved for future development is scanning medicine and querying it by its NDC (National Drug Code) to provide even more detailed information. In response to the needs of elderly users, I seek to the implementation of a text enlarger, making it easier for elders to read small text on medicinal products.

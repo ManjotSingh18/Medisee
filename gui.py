@@ -109,7 +109,6 @@ class mainapp():
 
     def drawdata(self, frames):
         self.offset=0
-        print(self.frm0.winfo_children()[1].get("1.0","end-1c"))
         self.data= home.apicall(self.frm0.winfo_children()[1].get("1.0","end-1c").split("\n")[-1], self.limits)
         self.move.clear()
         counter=0

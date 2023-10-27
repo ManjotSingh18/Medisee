@@ -7,9 +7,14 @@ Medisee is a program with the primary goal of enhancing transparency and accessi
 
 # Features 
 * Transforms FDA API data into visual representations
-* 1000 drug/reaction cases per query
+* Up to 5000 drug/reaction cases per query
 * Filters to narrow down cases and focus on user criteria
 * user-friendly GUI
+
+# Video Showcase
+<p align="center">
+<a href="https://www.youtube.com/watch?v=gjNrZncsNDQ"><img src="https://img.youtube.com/vi/gjNrZncsNDQ/maxresdefault.jpg" width="50%" height="auto" ></a>
+</p>
 
 # Requirements
 * Python (See Requirements.txt)
@@ -17,9 +22,10 @@ Medisee is a program with the primary goal of enhancing transparency and accessi
 * Network Connection
 * Command Prompt
 
+
 # Installation and Usage
 1. Begin by downloading the repository and extracting it to your preferred location.
-2. Open a terminal and navigate to the repository directory using the "cd Path/to/folder/Medisee" command.
+2. Open a terminal and navigate to the repository directory using the "cd Path/to/folder/Medisee" command (ensure Medisee folder is last one if nested).
 3. Run the command pip install -r requirements.txt command.
 4. To execute the program, enter the following command: python gui.py.
 5. Users will encounter a medical disclaimer. They can choose to agree and continue or disagree to terminate the program.
